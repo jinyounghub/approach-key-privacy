@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Approach Key 데이터 삭제 요청</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fffefb;
+      --surface: #f7faf7;
+      --text: #17201c;
+      --muted: #5f6f68;
+      --line: #dce7e0;
+      --brand: #155e54;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 22px 72px;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 30px;
+      padding-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.2;
+      margin: 0 0 8px;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 34px 0 10px;
+    }
+    p, li {
+      font-size: 16px;
+    }
+    a {
+      color: var(--brand);
+    }
+    .meta, .muted {
+      color: var(--muted);
+    }
+    .box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin: 18px 0;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Approach Key 데이터 삭제 요청</h1>
+    <p class="meta">최종 업데이트: 2026년 5월 31일</p>
+    <p class="meta">앱 이름: Approach Key · 개발자: jinyounghub · 문의: <a href="mailto:jean.510@gmail.com">jean.510@gmail.com</a></p>
+  </header>
+
+  <section class="box">
+    <p>
+      Approach Key는 앱 안에서 별도 사용자 계정을 만들거나 외부 계정 로그인을 제공하지 않습니다.
+      다만 사용자가 동의해 전송한 마스킹된 진단 리포트와 사용자의 기기 안에 저장된 앱 데이터가 있을 수 있습니다.
+      이 페이지는 해당 데이터의 삭제 방법을 안내합니다.
+    </p>
+  </section>
+
+  <h2>1. 기기 안에 저장된 데이터 삭제</h2>
+  <p>사용자는 언제든지 Android 설정에서 앱 데이터를 삭제할 수 있습니다.</p>
+  <ol>
+    <li>Android 설정을 엽니다.</li>
+    <li>앱 &gt; Approach Key를 선택합니다.</li>
+    <li>저장공간 또는 저장용량 메뉴에서 데이터 삭제를 선택합니다.</li>
+  </ol>
+  <p>
+    앱을 삭제해도 기기 안에 저장된 앱 데이터는 함께 삭제됩니다. 차량에 등록된 키는 차량의 키 관리 화면에서 별도로 삭제할 수 있습니다.
+  </p>
+
+  <h2>2. 개발자 서버에 전송된 진단 리포트 삭제 요청</h2>
+  <p>
+    베타 테스트 중 사용자가 동의해 전송한 마스킹된 진단 리포트 삭제를 요청하려면
+    <a href="mailto:jean.510@gmail.com">jean.510@gmail.com</a>으로 메일을 보내 주세요.
+  </p>
+  <p>메일에는 가능한 경우 다음 정보를 포함해 주세요.</p>
+  <ul>
+    <li>앱 설정 화면에 표시되는 리포트 ID 또는 앱 인스턴스 ID</li>
+    <li>삭제를 원하는 대략적인 리포트 전송 날짜와 시간</li>
+    <li>사용 중인 기기 모델</li>
+  </ul>
+
+  <h2>3. 삭제되는 데이터 유형</h2>
+  <p>요청이 확인되면 개발자 서버에 저장된 해당 사용자의 진단 리포트를 삭제합니다. 리포트에는 다음 데이터가 포함될 수 있습니다.</p>
+  <ul>
+    <li>앱 인스턴스 ID와 리포트 참고용 식별값</li>
+    <li>기기 제조사/모델, Android 버전, 앱 버전</li>
+    <li>앱 상태, 화면/잠금 상태, 권한 상태</li>
+    <li>마스킹 또는 해시 처리된 VIN/BLE 주소</li>
+    <li>최근 BLE/RSSI 상태, Tesla 알림 상태, 차량 상태 판정</li>
+    <li>키 등록, 수동 문열림, 자동 문열림 명령의 성공/실패 및 오류 정보</li>
+    <li>문제 분석을 위한 최근 진단 로그</li>
+  </ul>
+
+  <h2>4. 보관될 수 있는 데이터</h2>
+  <p>
+    삭제 요청 처리 기록과 법적 의무 이행에 필요한 최소한의 메일 기록은 합리적인 기간 동안 보관될 수 있습니다.
+    앱은 별도 사용자 계정을 제공하지 않으므로 계정 자체를 삭제하는 절차는 없습니다.
+  </p>
+
+  <h2>5. 처리 기간</h2>
+  <p>
+    삭제 요청은 보통 요청 확인 후 30일 이내에 처리합니다. 요청 내용을 식별하기 어려운 경우 추가 정보를 요청할 수 있습니다.
+  </p>
+
+  <p class="muted">
+    개인정보처리방침: <a href="https://jinyounghub.github.io/approach-key-privacy/">https://jinyounghub.github.io/approach-key-privacy/</a>
+  </p>
+</main>
+</body>
+</html>
