@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Approach Key 개인정보처리방침</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fffefb;
+      --surface: #f7faf7;
+      --text: #17201c;
+      --muted: #5f6f68;
+      --line: #dce7e0;
+      --brand: #155e54;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 22px 72px;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 30px;
+      padding-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.2;
+      margin: 0 0 8px;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 34px 0 10px;
+    }
+    p, li {
+      font-size: 16px;
+    }
+    a {
+      color: var(--brand);
+    }
+    .meta, .muted {
+      color: var(--muted);
+    }
+    .box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin: 18px 0;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Approach Key 개인정보처리방침</h1>
+    <p class="meta">최종 업데이트: 2026년 5월 31일</p>
+    <p class="meta">앱 이름: Approach Key · 개발자: jinyounghub · 문의: <a href="mailto:jean.510@gmail.com">jean.510@gmail.com</a></p>
+  </header>
+
+  <section class="box">
+    <p>
+      Approach Key는 사용자가 본인 소유 또는 사용 권한이 있는 Tesla 차량에 가까이 접근했을 때
+      BLE 신호와 Tesla 앱 연결 상태를 이용해 운전석 문열림을 준비하는 베타 앱입니다.
+      이 개인정보처리방침은 앱이 민감한 사용자 및 기기 데이터를 어떻게 저장, 사용, 전송하는지 설명합니다.
+    </p>
+  </section>
+
+  <h2>1. 앱이 기기 안에 저장하는 정보</h2>
+  <p>앱 기능 제공을 위해 다음 정보가 사용자의 Android 기기 안에 저장될 수 있습니다.</p>
+  <ul>
+    <li>사용자가 입력한 차량 VIN</li>
+    <li>사용자가 선택한 차량 BLE 이름, BLE 식별자, RSSI 신호값과 접근 상태</li>
+    <li>Tesla 공식 앱 알림에서 확인한 차량 연결 상태</li>
+    <li>자동 문열림 기준값, 유지 시간, 쿨다운, 탑승 방지 기준값 등 앱 설정</li>
+    <li>앱 상태, 휴대폰 잠금/화면 상태, Android 버전, 기기 모델</li>
+    <li>Android Keystore에 생성한 차량 키와 공개키 지문</li>
+    <li>앱 인스턴스 ID와 사용자가 설정한 리포트 참고용 식별값</li>
+  </ul>
+  <p>
+    차량 키의 개인키는 Android Keystore에 저장되며, 앱 밖으로 전송하지 않습니다.
+    앱은 사용자의 Tesla 계정 이메일 또는 비밀번호를 요구하거나 저장하지 않습니다.
+  </p>
+
+  <h2>2. 앱 권한 사용</h2>
+  <p>Approach Key는 기능 제공을 위해 다음 권한 또는 시스템 설정을 요청할 수 있습니다.</p>
+  <ul>
+    <li>Nearby devices / Bluetooth: 차량 BLE 스캔, 연결, RSSI 읽기, BLE 명령 전송</li>
+    <li>위치 권한 또는 위치 서비스: 일부 Android 버전에서 BLE 스캔 결과를 받기 위해 필요</li>
+    <li>Tesla 앱 알림 접근: Tesla 공식 앱의 연결됨/연결 해제됨 상태 감지</li>
+    <li>포그라운드 서비스 알림: 화면 꺼짐 또는 잠금 상태에서도 차량 접근 대기를 사용자에게 표시</li>
+    <li>배터리 제한 해제: 자동 문열림 대기가 시스템 절전 정책으로 중단되는 것을 줄이기 위함</li>
+  </ul>
+
+  <h2>3. 진단 리포트 전송</h2>
+  <p>
+    진단 리포트 전송은 선택 사항입니다. 사용자가 앱 안에서 명시적으로 동의하고,
+    베타 빌드에 리포트 서버가 설정된 경우에만 마스킹된 진단 리포트를 개발자 서버로 전송합니다.
+  </p>
+  <p>진단 리포트에는 다음 정보가 포함될 수 있습니다.</p>
+  <ul>
+    <li>앱 인스턴스 ID와 리포트 참고용 식별값</li>
+    <li>기기 제조사/모델, Android 버전, 앱 버전</li>
+    <li>앱 foreground/background 상태, 화면/잠금 상태, 권한 상태</li>
+    <li>마스킹 또는 해시 처리된 VIN, BLE 이름, BLE 주소</li>
+    <li>최근 BLE/RSSI 상태, Tesla 알림 상태, 차량 상태 판정</li>
+    <li>키 등록, 수동 문열림, 자동 문열림 명령의 성공/실패 및 오류 정보</li>
+    <li>문제 분석을 위한 최근 진단 로그</li>
+  </ul>
+  <p>
+    리포트 전송 전에 앱은 VIN, 전체 BLE MAC 주소, VCSEC 프레임/페이로드 등 민감한 원문 로그를
+    마스킹하거나 제외하도록 처리합니다. 리포트는 오류 분석과 베타 품질 개선 목적으로만 사용합니다.
+  </p>
+
+  <h2>4. 제3자 제공 및 공유</h2>
+  <p>
+    Approach Key는 광고 목적으로 사용자 데이터를 판매하거나 공유하지 않습니다.
+    앱은 라이선스 확인을 위해 Google Play Billing 및 Google Play Integrity를 사용할 수 있습니다.
+    사용자가 진단 리포트 전송에 동의한 경우에만 개발자 운영 서버로 마스킹된 리포트가 전송될 수 있습니다.
+  </p>
+
+  <h2>5. 보안</h2>
+  <ul>
+    <li>차량 키 개인키는 Android Keystore에 저장합니다.</li>
+    <li>진단 리포트는 HTTPS endpoint로 전송합니다.</li>
+    <li>리포트 업로드 토큰이 설정된 빌드에서는 업로드 요청에 인증 헤더를 사용합니다.</li>
+    <li>VIN과 BLE 주소 등 민감한 식별자는 마스킹 또는 해시 처리합니다.</li>
+  </ul>
+
+  <h2>6. 보관 및 삭제</h2>
+  <p>
+    사용자는 Android 앱 데이터 삭제 또는 앱 삭제를 통해 기기 안에 저장된 정보를 삭제할 수 있습니다.
+    차량에 등록된 키는 차량의 키 관리 화면에서도 삭제할 수 있습니다.
+  </p>
+  <p>
+    개발자 서버에 전송된 진단 리포트는 베타 테스트 오류 분석에 필요한 기간 동안 보관될 수 있습니다.
+    리포트 삭제 요청은 <a href="mailto:jean.510@gmail.com">jean.510@gmail.com</a>으로 보낼 수 있습니다.
+  </p>
+
+  <h2>7. 아동의 개인정보</h2>
+  <p>
+    Approach Key는 만 13세 미만 아동을 대상으로 하지 않습니다. 앱은 차량 소유자 또는 사용 권한이 있는
+    운전자를 위한 도구입니다.
+  </p>
+
+  <h2>8. 변경 사항</h2>
+  <p>
+    개인정보처리방침이 변경되는 경우 이 페이지의 최종 업데이트 날짜를 갱신합니다.
+    중요한 변경 사항은 앱 또는 스토어 등록정보를 통해 추가로 안내할 수 있습니다.
+  </p>
+
+  <hr>
+  <p class="muted">
+    English summary: Approach Key stores vehicle-related settings and a local BLE key on the device.
+    Optional masked diagnostic reports are sent only after user consent and only for beta troubleshooting.
+    The app does not sell user data and does not request or store Tesla account credentials.
+  </p>
+</main>
+</body>
+</html>
